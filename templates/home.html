@@ -1,0 +1,58 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Diabetes CLS</h1>
+
+       <form action="{{ url_for('cls_datapoint')}}" method="post">
+        <h1>
+            <legend>Diabetes CLassification</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Pregnancies</label>
+            <input class="form-control" type="number" name="Pregnancies"
+                placeholder="Enter your Pregnancies" min='0' max='17' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Glucose</label>
+            <input class="form-control" type="number" name="Glucose"
+                placeholder="Enter your Glucose" min='0' max='199' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BloodPressure</label>
+            <input class="form-control" type="number" name="BloodPressure"
+                placeholder="Enter your BloodPressure" min='0' max='122' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">SkinThickness</label>
+            <input class="form-control" type="number" name="SkinThickness"
+                placeholder="Enter your SkinThickness" min='0' max='99' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Insulin</label>
+            <input class="form-control" type="number" name="Insulin"
+                placeholder="Enter your Insulin" min='0' max='846' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BMI</label>
+            <input class="form-control" type="number" name="BMI"
+                placeholder="Enter your BMI" min="0" max="67.1" step="0.1" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">DiabetesPedigreeFunction</label>
+            <input class="form-control" type="number" name="DiabetesPedigreeFunction"
+                placeholder="Enter your DiabetesPedigreeFunction" min="0.0078" max="2.42" step="0.0001" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input class="form-control" type="number" name="Age"
+                placeholder="Enter your Age" min='21' max='81' />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Outcome" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
