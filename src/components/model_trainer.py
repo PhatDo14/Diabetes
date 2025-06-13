@@ -87,7 +87,7 @@ class ModelTrainer:
             predicted = best_model.predict(X_test)
 
             recall = recall_score(y_test, predicted)
-            return recall
+            return recall,best_model_name
 
 
         except Exception as e:
