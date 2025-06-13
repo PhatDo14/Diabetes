@@ -52,12 +52,12 @@ class ModelTrainer:
                 "Decision Tree": {
                     'criterion': ['gini', 'entropy', 'log_loss'],
                     # 'splitter':['best','random'],
-                    # 'max_depth':[None, 5, 10, 15],
+                    'max_depth':[None, 5, 10, 15],
                 },
                 "Random Forest": {
                     # 'criterion': ['gini', 'entropy', 'log_loss'],
                     # 'max_features':['sqrt','log2',None],
-                    'n_estimators': [2]#, 16, 32, 64, 128, 256]
+                    'n_estimators': [10]#, 16, 32, 64, 128, 256]
                 }
 
             }
@@ -76,7 +76,7 @@ class ModelTrainer:
             best_model = models[best_model_name]
 
             if best_model_score < 0.6:
-                raise CustomException("No best model found")
+                raise CustomException("No best model found",sys)
             logging.info(f"Best found model on both training and testing dataset")
 
             save_object(
